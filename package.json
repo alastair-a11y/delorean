@@ -1,0 +1,16 @@
+{
+  "name": "delorean",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeLorean — Claude-driven scheduling, quoting and billing hub for The Refinery",
+  "scripts": {
+    "install:all": "npm --prefix server install && npm --prefix web install",
+    "dev": "concurrently -n api,web \"npm --prefix server run dev\" \"npm --prefix web run dev\"",
+    "dev:api": "npm --prefix server run dev",
+    "dev:web": "npm --prefix web run dev",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix server start",
+    "typecheck": "npx --prefix web tsc -p server/tsconfig.json && npx --prefix web tsc -b web"
+  },
+  "devDependencies": { "concurrently": "^9.1.2" }
+}
